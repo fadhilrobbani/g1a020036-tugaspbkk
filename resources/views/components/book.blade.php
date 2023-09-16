@@ -1,9 +1,9 @@
 @props(['book'])
 
 <div
-    class="max-w-sm bg-white border hover:scale-105 hover:transition-all  border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+    class="max-w-sm bg-white border hover:scale-105 hover:transition-all  border-gray-300 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
     <a href="#">
-        <img class="rounded-t-lg" src="{{ Storage::url('book.jpg') }}" alt="" />
+        <img class="rounded-t-lg w-full max-w-36" src="{{ asset('images/book.jpg') }}" alt="" />
     </a>
     <div class="p-5">
         <a href="#">
