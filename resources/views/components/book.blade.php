@@ -1,15 +1,16 @@
 @props(['book'])
 
 <div
-    class="max-w-sm bg-white border hover:scale-105 hover:transition-all  border-gray-300 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
+    class="relative max-w-sm bg-white border hover:scale-105 hover:transition-all  border-gray-300 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
     <a href="#">
         <img class="rounded-t-lg w-full max-w-36" src="{{ asset('images/book.jpg') }}" alt="" />
     </a>
+    <div class="absolute left-2 top-2">coding</div>
     <div class="p-5">
         <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $book['title'] }}</h5>
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $book->title }}</h5>
         </a>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ $book['synopsis'] }}</p>
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ $book->description }}</p>
         <a href="#"
             class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
             Read more
