@@ -13,4 +13,16 @@ class BookController extends Controller
             'books' => Book::all()
         ]);
     }
+
+    public function store(Request $request){
+        $request->validate([
+            'book_code' => 'required|max:10',
+            'title' => 'required',
+            'description' => 'required',
+            'status' => 'required',
+          ]);
+          Book::create($request->all());
+          return redirect()->route('dashboard.books')
+            ->with('success','Post created successfully.');
+    }
 }

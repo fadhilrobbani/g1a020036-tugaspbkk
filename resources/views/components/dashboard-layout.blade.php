@@ -10,8 +10,9 @@
 </head>
 
 <body>
-    <x-sidebar />
-    {{ $slot }}
+    <x-sidebar>
+        {{ $slot }}
+    </x-sidebar>
 </body>
 
 </html>

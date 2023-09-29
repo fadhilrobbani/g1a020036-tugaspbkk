@@ -5,7 +5,7 @@
     <a href="#">
         <img class="rounded-t-lg w-full max-w-36" src="{{ asset('images/book.jpg') }}" alt="" />
     </a>
-    <div class="absolute left-2 top-2">coding</div>
+    <div class="absolute left-2 top-2">{{ $book->category ? $book->category : '' }}</div>
     <div class="p-5">
         <a href="#">
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $book->title }}</h5>
