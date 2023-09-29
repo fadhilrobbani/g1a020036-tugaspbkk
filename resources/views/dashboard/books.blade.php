@@ -2,6 +2,14 @@
     <x-slot:title>
         Books | Dashboard
     </x-slot:title>
+    @php
+        $type = 'error';
+        $messages = $errors->all();
+    @endphp
+    @if ($errors->any())
+        <x-notification :type='$type' :messages='$messages' />
+    @endif
+
     <section class="bg-gray-50 dark:bg-gray-900">
         <div class="mx-auto max-w-screen-xl ">
             <!-- Start coding here -->

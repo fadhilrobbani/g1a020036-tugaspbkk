@@ -16,13 +16,13 @@ class BookController extends Controller
 
     public function store(Request $request){
         $request->validate([
-            'book_code' => 'required|max:10',
+            'book_code' => 'required',
             'title' => 'required',
             'description' => 'required',
             'status' => 'required',
           ]);
           Book::create($request->all());
-          return redirect()->route('dashboard.books')
+          return redirect('/dashboard/books')
             ->with('success','Post created successfully.');
     }
 }
