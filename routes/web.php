@@ -15,8 +15,8 @@ Route::get('/login', function(){
 
 Route::get('/dashboard', [DashboardController::class,'index']);
 Route::get('/dashboard/books', [DashboardController::class,'books']);
-Route::get('/dashboard/books/{id}', [BookController::class,'show'])->name('show-book');
-Route::get('/dashboard/books-delete/{id}/', [DashboardController::class,'destroy'])->name('show-destroy-book');
+Route::get('/dashboard/books/{book}', [DashboardController::class,'show'])->name('show-book');
+Route::get('/dashboard/books-delete/{book}/', [DashboardController::class,'destroy'])->name('show-destroy-book');
 
 
 Route::post('/dashboard/books', [BookController::class,'store'])->name('store-book');
