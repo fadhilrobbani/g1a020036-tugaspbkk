@@ -14,8 +14,7 @@ class BookController extends Controller
         ]);
     }
 
-    public function show($id){
-        $book = Book::find($id);
+    public function show(Book $book){
         return view('dashboard.books.show', [
             'book' => $book
         ]);
@@ -33,21 +32,19 @@ class BookController extends Controller
             ->with('success','book created successfully.');
     }
 
-    public function destroy($id){
-        $book = Book::find($id);
+    public function destroy(Book $book){
         $book->delete();
         return redirect('/dashboard/books')
         ->with('success','book deleted successfully.');
     }
 
-    public function update(Request $request, $id){
+    public function update(Request $request, Book $book){
         $request->validate([
             'book_code' => 'required',
             'title' => 'required',
             'description' => 'required',
             'status' => 'required',
           ]);
-          $book = Book::find($id);
           $book->update($request->all());
           return redirect('dashboard/books')
             ->with('success', 'book updated successfully.');

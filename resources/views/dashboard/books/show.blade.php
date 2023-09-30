@@ -9,7 +9,7 @@
     @if ($errors->any())
         <x-notification :type='$type' :messages='$messages' />
     @endif
-
+    <h1 class="font-bold text-lg text-center">Edit Book</h1>
     <form class="space-y-6" action="{{ route('update-book', $book->id) }}" method="POST">
         @csrf
         @method('PUT')
@@ -25,6 +25,12 @@
             <input type="text" name="title" id="title" placeholder="Example: Laravel Book"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                 value="{{ $book->title }}" required>
+        </div>
+        <div>
+            <label for="image" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Image URL</label>
+            <input type="text" name="image" id="image" placeholder="Example: Laravel Book"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                value="{{ $book->image }}">
         </div>
         <div>
             <label for="description"

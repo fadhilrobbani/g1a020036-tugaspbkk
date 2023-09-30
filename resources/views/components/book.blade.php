@@ -1,9 +1,9 @@
 @props(['book'])
 
 <div
-    class="relative max-w-sm bg-white border hover:scale-105 hover:transition-all  border-gray-300 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
+    class="relative flex flex-col items-center justify-between max-w-sm bg-white border hover:scale-105 hover:transition-all  border-gray-300 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
     <a href="#">
-        <img class="rounded-t-lg w-full max-w-36" src="{{ asset('images/book.jpg') }}" alt="" />
+        <img class="rounded-t-lg w-full max-w-36" src="{{ $book->image }}" alt="{{ asset('images/book.jpg') }}" />
     </a>
     <div class="absolute left-2 top-2">{{ $book->category ? $book->category : '' }}</div>
     <div class="p-5">

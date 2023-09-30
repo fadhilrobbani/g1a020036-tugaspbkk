@@ -73,7 +73,7 @@
                     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                             <tr>
-                                <th scope="col" class="px-4 py-3">ID</th>
+                                <th scope="col" class="px-4 py-3">Cover</th>
                                 <th scope="col" class="px-4 py-3">Book Code</th>
                                 <th scope="col" class="px-4 py-3">Title</th>
                                 <th scope="col" class="px-4 py-3">Description</th>
@@ -90,7 +90,8 @@
                                 <tr class=" border-b dark:border-gray-700">
                                     <th scope="row"
                                         class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        {{ $book->id }}</th>
+                                        <img class="max-w-40 max-h-40" src="{{ $book->image }}" alt="cover-book">
+                                    </th>
                                     <th scope="row"
                                         class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                         {{ $book->book_code }}
@@ -100,12 +101,15 @@
                                     <td class="px-4 py-3">{{ $book->category ? $book->category : 'none' }}</td>
                                     <td class="px-4 py-3">{{ $book->status }}</td>
                                     <td class="px-4 py-3 ">
-                                        <div class="cursor-pointer">
+
+                                        <div
+                                            class="cursor-pointer rounded-lg text-center bg-pink-600 p-2 text-white m-2">
+                                            <a href="{{ route('show-book', $book->id) }}">Edit</a>
+                                        </div>
+                                        <div
+                                            class="cursor-pointer rounded-lg text-center bg-yellow-400 p-2 text-white m-2">
                                             <a href="{{ route('show-destroy-book', $book->id) }}">Delete</a>
 
-                                        </div>
-                                        <div>
-                                            <a href="{{ route('show-book', $book->id) }}">Edit</a>
                                         </div>
                                     </td>
                                 </tr>

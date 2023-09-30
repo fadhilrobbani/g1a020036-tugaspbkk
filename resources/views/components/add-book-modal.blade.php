@@ -32,6 +32,12 @@
                             required>
                     </div>
                     <div>
+                        <label for="image" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Image
+                            URL</label>
+                        <input type="text" name="image" id="image" placeholder="Example: http://image.com/2"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
+                    </div>
+                    <div>
                         <label for="description"
                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
                         <input type="text" name="description" id="description"
@@ -54,7 +60,7 @@
 
                         <div>
                             <div class="flex items-center ">
-                                <input checked id="out_stock" type="radio" value="out_stock" name="status"
+                                <input id="out_stock" type="radio" value="out_stock" name="status"
                                     class="w-4 h-4 hover:cursor-pointer text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                                 <label for="out_stock"
                                     class="ml-2 text-sm hover:cursor-pointer font-medium text-gray-900 dark:text-gray-300">Out
