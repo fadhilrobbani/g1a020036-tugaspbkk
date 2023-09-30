@@ -15,4 +15,6 @@ Route::get('/login', function(){
 Route::get('/dashboard', [DashboardController::class,'index']);
 Route::get('/dashboard/books', [DashboardController::class,'books']);
 Route::post('/dashboard/books', [BookController::class,'store'])->name('store-book');
+Route::delete('/dashboard/books/{id}', [BookController::class,'destroy'])->name('destroy-book');
+Route::put('/dashboard/books/{id}', [BookController::class,'update'])->name('update-book');
 

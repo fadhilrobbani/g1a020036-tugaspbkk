@@ -23,6 +23,26 @@ class BookController extends Controller
           ]);
           Book::create($request->all());
           return redirect('/dashboard/books')
-            ->with('success','Post created successfully.');
+            ->with('success','book created successfully.');
+    }
+
+    public function destroy($id){
+        $book = Book::find($id);
+        $book->delete();
+        return redirect('/dashboard/books')
+        ->with('success','book deleted successfully.');
+    }
+
+    public function update(Request $request, $id){
+        $request->validate([
+            'book_code' => 'required',
+            'title' => 'required',
+            'description' => 'required',
+            'status' => 'required',
+          ]);
+          $book = Book::find($id);
+          $book->update($request->all());
+          return redirect('dashboard/books')
+            ->with('success', 'book updated successfully.');
     }
 }

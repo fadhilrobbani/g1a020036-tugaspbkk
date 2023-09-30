@@ -137,5 +137,5 @@
     </section>
     <x-add-book-modal />
     <x-edit-book-modal />
-    <x-delete-modal />
+    <x-delete-modal :book='$book' />
 </x-dashboard-layout>
