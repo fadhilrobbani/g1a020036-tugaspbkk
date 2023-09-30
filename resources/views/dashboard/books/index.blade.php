@@ -74,7 +74,8 @@
                     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                             <tr>
-                                <th scope="col" class="px-4 py-3">Book ID</th>
+                                <th scope="col" class="px-4 py-3">ID</th>
+                                <th scope="col" class="px-4 py-3">Book Code</th>
                                 <th scope="col" class="px-4 py-3">Title</th>
                                 <th scope="col" class="px-4 py-3">Description</th>
                                 <th scope="col" class="px-4 py-3">Category</th>
@@ -90,39 +91,22 @@
                                 <tr class=" border-b dark:border-gray-700">
                                     <th scope="row"
                                         class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        {{ $book->book_code }}</th>
+                                        {{ $book->id }}</th>
+                                    <th scope="row"
+                                        class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        {{ $book->book_code }}
+                                    </th>
                                     <td class="px-4 py-3">{{ $book->title }}</td>
                                     <td class="px-4 py-3">{{ $book->description }}</td>
                                     <td class="px-4 py-3">{{ $book->category ? $book->category : 'none' }}</td>
                                     <td class="px-4 py-3">{{ $book->status }}</td>
                                     <td class="px-4 py-3 ">
-                                        <button id="dropdown-button" data-dropdown-toggle="list-dropdown"
-                                            class="inline-flex items-center p-0.5 text-sm font-medium text-center text-gray-500 hover:text-gray-800 rounded-lg focus:outline-none dark:text-gray-400 dark:hover:text-gray-100"
-                                            type="button">
-                                            <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
-                                                viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
-                                            </svg>
-                                        </button>
-                                        <div id="list-dropdown"
-                                            class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
+                                        <div class="cursor-pointer">
+                                            <a href="{{ route('show-destroy-book', $book->id) }}">Delete</a>
 
-
-                                            <button data-modal-target="edit-book-modal"
-                                                data-modal-toggle="edit-book-modal"
-                                                class="block border-2 w-full py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                                                type="button">
-                                                Edit
-                                            </button>
-
-
-
-                                            <button data-modal-target="delete-modal" data-modal-toggle="delete-modal"
-                                                class="block border-2 w-full py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                                                type="button">
-                                                Delete
-                                            </button>
+                                        </div>
+                                        <div>
+                                            <a href="{{ route('show-book', $book->id) }}">Edit</a>
                                         </div>
                                     </td>
                                 </tr>
@@ -137,5 +121,7 @@
     </section>
     <x-add-book-modal />
     <x-edit-book-modal />
-    <x-delete-modal :book='$book' />
+
+
+
 </x-dashboard-layout>

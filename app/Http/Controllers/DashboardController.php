@@ -15,8 +15,14 @@ class DashboardController extends Controller
     }
 
     public function books(): View{
-        return view('dashboard.books',[
+        return view('dashboard.books.index',[
             'books' => Book::all()
+        ]);
+    }
+
+    public function destroy($id): View{
+        return view('dashboard.books.destroy',[
+            'book' => Book::find($id)
         ]);
     }
 }

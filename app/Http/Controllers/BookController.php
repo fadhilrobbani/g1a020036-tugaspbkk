@@ -14,6 +14,13 @@ class BookController extends Controller
         ]);
     }
 
+    public function show($id){
+        $book = Book::find($id);
+        return view('dashboard.books.show', [
+            'book' => $book
+        ]);
+    }
+
     public function store(Request $request){
         $request->validate([
             'book_code' => 'required',

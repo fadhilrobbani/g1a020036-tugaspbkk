@@ -15,7 +15,9 @@
             </button>
             <div class="px-6 py-6 lg:px-8">
                 <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Edit Book</h3>
-                <form class="space-y-6" action="#">
+                <form class="space-y-6" method="POST">
+                    @csrf
+                    @method('PUT')
                     <div>
                         <label for="book_code" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Book
                             Code</label>
@@ -53,7 +55,7 @@
 
                         <div>
                             <div class="flex items-center ">
-                                <input checked id="out_stock" type="radio" value="out_stock" name="status-radio"
+                                <input id="out_stock" type="radio" value="out_stock" name="status-radio"
                                     class="w-4 h-4 hover:cursor-pointer text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                                 <label for="out_stock"
                                     class="ml-2 text-sm hover:cursor-pointer font-medium text-gray-900 dark:text-gray-300">Out
