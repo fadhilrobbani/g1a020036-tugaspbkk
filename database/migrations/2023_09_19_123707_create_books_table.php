@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('book_code');
             $table->string('title');
-            $table->text('image')->default('https://static.vecteezy.com/system/resources/thumbnails/011/251/190/small_2x/text-book-closed-free-vector.jpg')->nullable(true);
+            $table->text('image')->nullable(true);
             $table->text('description');
             $table->enum('status',['in_stock','out_stock'])->default('in_stock');
             $table->timestamps();

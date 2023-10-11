@@ -21,13 +21,18 @@ class BookController extends Controller
     }
 
     public function store(Request $request){
-        $request->validate([
+        $newBook = $request->validate([
             'book_code' => 'required',
+            'image' => 'image',
             'title' => 'required',
             'description' => 'required',
             'status' => 'required',
           ]);
-          Book::create($request->all());
+
+          if($request->hasFile('image')) {
+            $newBook['image'] = $request->file('image')->store('images','public');
+          }
+          Book::create($newBook);
           return redirect('/dashboard/books')
             ->with('success','book created successfully.');
     }

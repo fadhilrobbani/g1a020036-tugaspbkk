@@ -15,7 +15,7 @@
             </button>
             <div class="px-6 py-6 lg:px-8">
                 <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Add Book</h3>
-                <form class="space-y-6" action="{{ route('store-book') }}" method="POST">
+                <form class="space-y-6" action="{{ route('store-book') }}" enctype="multipart/form-data" method="POST">
                     @csrf
                     <div>
                         <label for="book_code" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Book
@@ -32,10 +32,12 @@
                             required>
                     </div>
                     <div>
-                        <label for="image" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Image
-                            URL</label>
-                        <input type="text" name="image" id="image" placeholder="Example: http://image.com/2"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
+                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            for="image">Upload Image</label>
+                        <input
+                            class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                            id="image" name="image" type="file" multiple>
+
                     </div>
                     <div>
                         <label for="description"

@@ -10,6 +10,14 @@
         <x-notification :type='$type' :messages='$messages' />
     @endif
 
+    @php
+        $type = 'success';
+        $messages = session('success');
+    @endphp
+    @if (session()->has('success'))
+        <x-notification :type='$type' :messages='$messages' />
+    @endif
+
     <section class="bg-gray-50 dark:bg-gray-900">
         <div class="mx-auto max-w-screen-xl ">
             <!-- Start coding here -->
@@ -90,7 +98,9 @@
                                 <tr class=" border-b dark:border-gray-700">
                                     <th scope="row"
                                         class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        <img class="max-w-40 max-h-40" src="{{ $book->image }}" alt="cover-book">
+                                        <img class="max-w-40 max-h-40"
+                                            src="{{ $book->image ? asset('storage/' . $book->image) : asset('images/book.jpg') }}"
+                                            alt="cover-book">
                                     </th>
                                     <th scope="row"
                                         class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
