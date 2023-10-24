@@ -1,4 +1,4 @@
-# TUGAS PERTEMUAN 4 PROYEK PEMROGRAMAN BERBASIS KERANGKA KERJA (Cek halaman `dashboard/books`)
+# TUGAS 4 PROYEK PEMROGRAMAN BERBASIS KERANGKA KERJA (Cek halaman `dashboard/books`, folder model, dan view `dashboard.books.index`)
 
 -   Nama: Fadhilla Ilham Robbani
 -   NPM: G1A020036
@@ -30,4 +30,4 @@ Ini adalah website Sistem Informasi Perpustakaan yang dibuat dengan Laravel. Ada
 2. Halaman login `/login`
 3. Halaman register `/register`
 4. Halaman dashboard `/dashboard`
-5. Halaman dashboard buku `/dashboard/books` -> UNTUK TUGAS CRUD PERTEMUAN 4
+5. Halaman dashboard buku `/dashboard/books`
