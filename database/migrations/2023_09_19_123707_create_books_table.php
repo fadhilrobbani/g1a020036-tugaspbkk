@@ -17,7 +17,9 @@ return new class extends Migration
             $table->string('title');
             $table->text('image')->nullable(true);
             $table->text('description');
-            $table->enum('status',['in_stock','out_stock'])->default('in_stock');
+            $table->unsignedBigInteger('category_id');
+            $table->enum('status', ['in_stock', 'out_stock'])->default('in_stock');
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
         });
     }

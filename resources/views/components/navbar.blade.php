@@ -25,7 +25,7 @@
                                     John Doe
                                 </p>
                                 <p class="text-sm text-gray-900 dark:text-white" role="none">
-                                    @johndoe123
+                                    {{ '@johndoe123' }}
                                 </p>
 
                             </div>

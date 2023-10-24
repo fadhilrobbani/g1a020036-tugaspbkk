@@ -108,7 +108,7 @@
                                     </th>
                                     <td class="px-4 py-3">{{ $book->title }}</td>
                                     <td class="px-4 py-3">{{ $book->description }}</td>
-                                    <td class="px-4 py-3">{{ $book->category ? $book->category : 'none' }}</td>
+                                    <td class="px-4 py-3">{{ $book->category->name }}</td>
                                     <td class="px-4 py-3">{{ $book->status }}</td>
                                     <td class="px-4 py-3 ">
 
